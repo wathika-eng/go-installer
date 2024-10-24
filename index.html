@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!--------SEO-------->
+		<title>Install Go (Golang) in Seconds | Quick Start Guide</title>
+		<meta
+			name="description"
+			content="Learn how to install Go (Golang) quickly and easily on macOS, Linux, or Windows. Step-by-step guide for beginners to get started with Go programming." />
+		<meta
+			name="keywords"
+			content="Go, Golang, install Go, Go installation, get started with Go, Go programming, Go for beginners" />
+		<meta name="author" content="Your Name or Organization" />
+		<meta name="robots" content="index, follow" />
+		<meta
+			property="og:title"
+			content="Install Go (Golang) in Seconds | Quick Start Guide" />
+		<meta
+			property="og:description"
+			content="Learn how to install Go (Golang) quickly and easily on macOS, Linux, or Windows. Step-by-step guide for beginners to get started with Go programming." />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="#" />
+		<meta
+			property="og:image"
+			content="/favicon_io/70-701208_28-may-2014-golang-favicon.png" />
+		<link rel="canonical" href="#" />
+		<!--------FAVICON-------->
+		<link
+			rel="icon"
+			type="image/png"
+			href="/favicon_io/70-701208_28-may-2014-golang-favicon.png" />
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="css/main.css" />
+	</head>
+	<body>
+		<h1>Install Go (Golang) in Seconds | Quick Start Guide</h1>
+		<p style="text-align: center">Quick and easy Go installation</p>
+
+		<h2>1. Choose your operating system:</h2>
+		<select id="os-select">
+			<option value="macos">macOS</option>
+			<option value="linux">Linux</option>
+			<option value="windows">Windows</option>
+		</select>
+
+		<h2>2. Copy the installation command:</h2>
+		<pre><code id="install-command">/bin/bash -c "$(curl -fsSL https://git.io/go-installer)"</code></pre>
+		<button class="copy-button" onclick="copyCommand()">Copy Command</button>
+
+		<h2>3. Open Terminal:</h2>
+		<p>
+			Press <kbd>⌘</kbd> + <kbd>Space</kbd>, type "Terminal", and press
+			<kbd>Return</kbd>.
+		</p>
+
+		<h2>4. Paste and run the command:</h2>
+		<p>
+			Paste the copied command into the Terminal and press <kbd>Return</kbd>.
+		</p>
+
+		<h2>5. Verify the installation:</h2>
+		<p>After the installation is complete, run:</p>
+		<pre><code>go version</code></pre>
+
+		<p style="text-align: center; font-weight: bold; margin-top: 30px">
+			You can now use <span style="color: #27ae60">Go</span> in your terminal!
+		</p>
+
+		<script>
+			function copyCommand() {
+				const command = document.getElementById('install-command').textContent;
+				navigator.clipboard.writeText(command).then(() => {
+					const button = document.querySelector('.copy-button');
+					button.textContent = 'Copied!';
+					setTimeout(() => {
+						button.textContent = 'Copy Command';
+					}, 2000);
+				});
+			}
+
+			document
+				.getElementById('os-select')
+				.addEventListener('change', function () {
+					// to be fixed
+					console.log('Selected OS:', this.value);
+				});
+		</script>
+	</body>
+</html>
