@@ -1,17 +1,49 @@
+:root {
+	--bg-color: #ffffff;
+	--text-color: #333333;
+	--heading-color: #2c3e50;
+	--subheading-color: #2980b9;
+	--button-bg: #3498db;
+	--button-text: #ffffff;
+	--button-hover: #2980b9;
+	--pre-bg: #f4f4f4;
+	--pre-border: #dddddd;
+	--kbd-bg: #f7f7f7;
+	--kbd-border: #cccccc;
+	--kbd-shadow: rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode {
+	--bg-color: #1a1a1a;
+	--text-color: #e0e0e0;
+	--heading-color: #61dafb;
+	--subheading-color: #4fc3f7;
+	--button-bg: #2196f3;
+	--button-text: #ffffff;
+	--button-hover: #1976d2;
+	--pre-bg: #2c2c2c;
+	--pre-border: #444444;
+	--kbd-bg: #333333;
+	--kbd-border: #555555;
+	--kbd-shadow: rgba(255, 255, 255, 0.1);
+}
+
 body {
 	font-family: Arial, sans-serif;
 	line-height: 1.6;
-	color: #333;
+	color: var(--text-color);
+	background-color: var(--bg-color);
 	max-width: 800px;
 	margin: 0 auto;
 	padding: 20px;
+	transition: background-color 0.3s, color 0.3s;
 }
 h1 {
 	text-align: center;
-	color: #2c3e50;
+	color: var(--heading-color);
 }
 h2 {
-	color: #2980b9;
+	color: var(--subheading-color);
 }
 select,
 pre {
@@ -19,15 +51,16 @@ pre {
 	padding: 10px;
 	margin-bottom: 20px;
 	border-radius: 5px;
-	border: 1px solid #ddd;
+	border: 1px solid var(--pre-border);
+	background-color: var(--pre-bg);
+	color: var(--text-color);
 }
 pre {
-	background-color: #f4f4f4;
 	overflow-x: auto;
 }
 button {
-	background-color: #3498db;
-	color: white;
+	background-color: var(--button-bg);
+	color: var(--button-text);
 	border: none;
 	padding: 10px 20px;
 	border-radius: 5px;
@@ -35,22 +68,28 @@ button {
 	transition: background-color 0.3s;
 }
 button:hover {
-	background-color: #2980b9;
+	background-color: var(--button-hover);
 }
 .copy-button {
 	display: block;
 	margin: 10px 0;
 }
 kbd {
-	background-color: #f7f7f7;
-	border: 1px solid #ccc;
+	background-color: var(--kbd-bg);
+	border: 1px solid var(--kbd-border);
 	border-radius: 3px;
-	box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px #fff inset;
-	color: #333;
+	box-shadow: 0 1px 0 var(--kbd-shadow), 0 0 0 2px #fff inset;
+	color: var(--text-color);
 	display: inline-block;
 	font-size: 0.85em;
 	font-weight: 700;
 	line-height: 1;
 	padding: 2px 4px;
 	white-space: nowrap;
+}
+#theme-toggle {
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	z-index: 1000;
 }
